@@ -15,8 +15,8 @@ class WechatController extends Controller
     {
 
         $config = [
-            'app_id' => 'wx3cf0f39249eb0xxx',
-            'secret' => 'f1c242f4f28f735d4687abb469072xxx',
+            'app_id' => 'wx083fd9c68238faaf',
+            'secret' => '58a5ad9bbcaaab65afdce9bee1fdc545',
 
             'response_type' => 'array',
 
