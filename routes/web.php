@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/wechat', 'WechatController@serve');
-//Route::get('alipay','Auth\AddController@Alipay');  // 发起支付请求
+Route::get('/wechat','Auth\WechatController@serve'); 
