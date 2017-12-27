@@ -31,6 +31,6 @@ class WeChatController extends Controller
     {
         $text = new Text(1);
         $text->content = '您好！overtrue。';
-        return 123;
+        //return 123;
     }
 }
