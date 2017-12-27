@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Log;
+use EasyWeChat\Kernel\Messages\Text;
+use EasyWeChat\Kernel\Messages\Video;
 
 class WeChatController extends Controller
 {
@@ -21,6 +23,14 @@ class WeChatController extends Controller
             return "欢迎关注你，欢迎来到朕的世界！";
         });
 
+
         return $app->server->serve();
+    }
+
+    public function dede()
+    {
+        $text = new Text(1);
+        $text->content = '您好！overtrue。';
+        return 123;
     }
 }
