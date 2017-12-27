@@ -1,26 +1,29 @@
-<?php 
+<?php
 
+namespace App\Http\Controllers\Auth;
 
-use EasyWeChat\Factory;
+use Log;
+use App\Http\Controllers\Controller;
 
-$config = [
-    'app_id' => 'wx3cf0f39249eb0xxx',
-    'secret' => 'f1c242f4f28f735d4687abb469072xxx',
+class WechatController extends Controller
+{
 
-    'response_type' => 'array',
+    /**
+     * 处理微信的请求消息
+     *
+     * @return string
+     */
+    public function serve()
+    {
+        Log::info('request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
 
-    'log' => [
-        'level' => 'debug',
-        'file' => __DIR__.'/wechat.log',
-    ],
-];
+        $wechat = app('wechat');
+        $wechat->server->setMessageHandler(function($message){
+            return "欢迎关注 overtrue！";
+        });
 
-$app = Factory::officialAccount($config);
+        Log::info('return response.');
 
-$response = $app->server->serve();
-
-// 将响应输出
-$response->send(); // Laravel 里请使用：return $response;
-
-
- ?>
+        return $wechat->server->serve();
+    }
+}
