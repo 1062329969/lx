@@ -46,7 +46,7 @@ class WeChatController extends Controller
 //        return $app->server->serve();
 //        }
         $app->user->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
-        //return $app->server->serve();
+        return $app->server->serve();
     }
 
 }
