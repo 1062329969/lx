@@ -44,17 +44,15 @@ class WeChatController extends Controller
     public function news()
     {
         $app = app('wechat.official_account');
-        $app->template_message->sendSubscription([
-        'touser' => 'ox_re1Zh30FKCubPhNHeIzdOvj3A',
-        'template_id' => '3As8lqURZg1rMUSdX7wVan131X1OEepEOaPTEgNjVzo',
-        'url' => 'https://easywechat.org',
-        'scene' => 1000,
-        'data' => [
-            'key1' => 'VALUE',
-            'key2' => 'VALUE2',
-        ],
+        $app->template_message->send([
+            'touser' => 'user-openid',
+            'template_id' => 'template-id',
+            'url' => 'https://easywechat.org',
+            'data' => [
+                'key1' => 'VALUE',
+                'key2' => 'VALUE2',
+             ],
         ]);
-        dd($app);die;
         return $app->server->serve();
         }
 
