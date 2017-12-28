@@ -28,9 +28,7 @@ class WeChatController extends Controller
         $app->server->push(function($message){
             return "欢迎关注你，欢迎来到朕的世界！";
         });
-
-
-        return $app->server->serve();
+      return $app->server->serve();
     }
 
     public function dede()
@@ -47,8 +45,8 @@ class WeChatController extends Controller
 //        $app->user->get(1);
 //        return $app->server->serve();
 //        }
-        $app->user->remark(ox_re1Zh30FKCubPhNHeIzdOvj3A, "僵尸粉");
-        return $app->server->serve();
+        $app->user->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
+        //return $app->server->serve();
     }
 
 }
