@@ -32,7 +32,6 @@ class WeChatController extends Controller
             'data' => [
                 'key1' => 'VALUE',
                 'key2' => 'VALUE2',
-            ...
         ],
     ]);
         return $app->server->serve();
