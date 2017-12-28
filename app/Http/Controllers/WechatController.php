@@ -6,6 +6,12 @@ use Log;
 use EasyWeChat\Kernel\Messages\Text;
 use EasyWeChat\Kernel\Messages\Video;
 
+use EasyWeChat\Kernel\Messages\News;
+use EasyWeChat\Kernel\Messages\NewsItem;
+
+
+
+
 class WeChatController extends Controller
 {
 
@@ -29,8 +35,26 @@ class WeChatController extends Controller
 
     public function dede()
     {
+
         $text = new Text(1);
-        $text->content = '您好！overtrue。';
-        //return 123;
+        $text->content = '您men 好！overtrue。';
+        dd($text);
     }
+
+    public function news()
+    {
+        $app = app('wechat.official_account');
+        $app->template_message->sendSubscription([
+        'touser' => 'ox_re1Zh30FKCubPhNHeIzdOvj3A',
+        'template_id' => '3As8lqURZg1rMUSdX7wVan131X1OEepEOaPTEgNjVzo',
+        'url' => 'https://easywechat.org',
+        'scene' => 1000,
+        'data' => [
+            'key1' => 'VALUE',
+            'key2' => 'VALUE2',
+        ],
+        ]);
+        return $app->server->serve();
+        }
+
 }
