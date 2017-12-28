@@ -44,9 +44,11 @@ class WeChatController extends Controller
     public function news()
     {
         $app = app('wechat.official_account');
-        $user = $app->user->get(1);
-        dd($res);die;
+//        $app->user->get(1);
+//        return $app->server->serve();
+//        }
+        $app->user->get(1);
         return $app->server->serve();
-        }
+    }
 
 }
