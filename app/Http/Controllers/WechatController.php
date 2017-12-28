@@ -44,15 +44,8 @@ class WeChatController extends Controller
     public function news()
     {
         $app = app('wechat.official_account');
-        $app->template_message->send([
-            'touser' => 'wx083fd9c68238faaf',
-            'template_id' => '3As8lqURZg1rMUSdX7wVan131X1OEepEOaPTEgNjVzo',
-            'url' => 'https://easywechat.org',
-            'data' => [
-                'key1' => 'VALUE',
-                'key2' => 'VALUE2',
-             ],
-        ]);
+        $user = $app->user->get($openId);
+        dd($res);die;
         return $app->server->serve();
         }
 
