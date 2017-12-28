@@ -25,25 +25,6 @@ class WeChatController extends Controller
         Log::info('request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
 
         $app = app('wechat.official_account');
-        $app->server->push(function($message){
-            return "欢迎关注你，欢迎来到朕的世界！";
-        });
-
-
-        return $app->server->serve();
-    }
-
-    public function dede()
-    {
-
-        $text = new Text(1);
-        $text->content = '您men 好！overtrue。';
-        dd($text);
-    }
-
-    public function news()
-    {
-        $app = app('wechat.official_account');
         $buttons = [
             [
                 "type" => "click",
@@ -72,6 +53,25 @@ class WeChatController extends Controller
             ],
         ];
         $app->menu->create($buttons);
+
+
+        return $app->server->serve();
+    }
+
+    public function dede()
+    {
+
+        $text = new Text(1);
+        $text->content = '您men 好！overtrue。';
+        dd($text);
+    }
+
+    public function news()
+    {
+        $app = app('wechat.official_account');
+        $user = $app->user->get(1);
+        dd($res);die;
+        return $app->server->serve();
         }
 
 }
