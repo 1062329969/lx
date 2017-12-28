@@ -54,6 +54,7 @@ class WeChatController extends Controller
             'key2' => 'VALUE2',
         ],
         ]);
+        dd($app);die;
         return $app->server->serve();
         }
 
