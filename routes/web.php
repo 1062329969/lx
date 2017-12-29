@@ -21,3 +21,6 @@ Route::any('dede','WechatController@dede');
 
 //微信菜单
 Route::any('news','FromController@index');
+
+//模板消息
+Route::any('model','FromController@modelx');

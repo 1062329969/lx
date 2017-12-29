@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Log;
 class FromController extends Controller{
+         //定义微信菜单
         public function index()
         {
             $app = app('wechat.official_account');
@@ -33,20 +34,26 @@ class FromController extends Controller{
                     ],
                 ],
             ];
-            $matchRule = [
-                "tag_id"=>"2",
-                "sex"=>"1",
-                "country"=>"中国",
-                "province"=>"广东",
-                "city"=>"广州",
-                "client_platform_type"=>"2",
-                "language"=>"zh_CN"
-            ];
-
-
-            $app->menu->add($buttons,$matchRule);
+            $app->menu->create($buttons);
             //var_dump($res);
 
+        }
+
+
+        public function modelx(){
+            $app = app('wechat.official_account');
+            $app->template_message->zend([
+                'touser'    => 'ox_re1Zh30FKCubPhNHeIzdOvj3A',
+                'template'  => 'FWE6QwbqtJduWK4zoSlYRuVDK260kO6NO-lQUbDpXDY',
+                'url'       => 'https://easywechat.org',
+                'data'      => [
+                    "first"  => "恭喜你购买成功！",
+                    "name"   => "巧克力",
+                    "price"  => "39.8元",
+                    "remark" => "欢迎再次购买！",
+                ]
+            ]);
+            
         }
     }
 
