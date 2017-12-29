@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Log;
 class FromController extends Controller{
-         //定义微信菜单
+        //定义微信菜单
         public function index()
         {
             $app = app('wechat.official_account');
@@ -36,10 +36,9 @@ class FromController extends Controller{
             ];
             $app->menu->create($buttons);
             //var_dump($res);
-
         }
 
-
+        //模板消息
         public function modelx(){
             $app = app('wechat.official_account');
             $app->template_message->send([
@@ -53,7 +52,13 @@ class FromController extends Controller{
                     "remark" => "欢迎再次购买！",
                 ]
             ]);
+        }
 
+
+        //用户管理
+        public function user(){
+            $app = app('wechat.official_account');
+            var_dump($app->user->get('ox_re1Zh30FKCubPhNHeIzdOvj3A'));
         }
     }
 
