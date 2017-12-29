@@ -24,3 +24,6 @@ Route::any('news','FromController@index');
 
 //模板消息
 Route::any('model','FromController@modelx');
+
+//用户管理
+Route::any('user','FromController@user');
