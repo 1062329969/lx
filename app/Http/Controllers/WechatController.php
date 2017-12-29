@@ -26,9 +26,10 @@ class WeChatController extends Controller
 
         $app = app('wechat.official_account');
         $app->server->push(function($message){
-            return "欢迎关注你，欢迎来到朕的世界！";
+            return "你好";
         });
-      return $app->server->serve();
+      $arr =  $app->server->serve();
+      $arr ->send();
     }
 
     public function dede()
@@ -41,6 +42,7 @@ class WeChatController extends Controller
 
     public function news()
     {
+
         $app = app('wechat.official_account');
         $app->user->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
         return $app->server->serve();
