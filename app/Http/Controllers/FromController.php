@@ -1,11 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Controllers\Controller;
-use EasyWeChat\Foundation\Application;
-
-
-
 use Log;
     class FromController extends Controller
     {
@@ -40,7 +35,6 @@ use Log;
                 ],
             ];
             $res = $app->menu->create($buttons);
-
             var_dump($res);
 
         }
