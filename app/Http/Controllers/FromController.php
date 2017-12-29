@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 use Log;
-    class FromController extends Controller
-    {
+class FromController extends Controller{
         public function index()
         {
             $app = app('wechat.official_account');
             $buttons = [
                 [
                     "type" => "click",
-                    "name" => "今日歌曲",
+                    "name" => "今日美食",
                     "key" => "V1001_TODAY_MUSIC"
                 ],
                 [
@@ -19,7 +18,7 @@ use Log;
                         [
                             "type" => "view",
                             "name" => "搜索",
-                            "url" => "http://www.soso.com/"
+                            "url" => "http://www.baidu.com/"
                         ],
                         [
                             "type" => "view",
@@ -34,7 +33,18 @@ use Log;
                     ],
                 ],
             ];
-            $app->menu->create($buttons);
+            $matchRule = [
+                "tag_id"=>"2",
+                "sex"=>"1",
+                "country"=>"中国",
+                "province"=>"广东",
+                "city"=>"广州",
+                "client_platform_type"=>"2",
+                "language"=>"zh_CN"
+            ];
+
+
+            $app->menu->create($buttons,$matchRule);
             //var_dump($res);
 
         }
