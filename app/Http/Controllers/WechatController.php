@@ -28,8 +28,8 @@ class WeChatController extends Controller
         $app->server->push(function($message){
             return "你好";
         });
-      $arr =  $app->server->serve();
-      $arr ->send();
+    return  $app->server->serve();
+      //$arr ->send();
     }
 
     public function dede()
