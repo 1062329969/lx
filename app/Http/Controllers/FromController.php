@@ -59,7 +59,7 @@ class FromController extends Controller{
         public function user(){
             $app = app('wechat.official_account');
             //var_dump($app->user->get('ox_re1Zh30FKCubPhNHeIzdOvj3A'));
-            $app->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
+            $app->user->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
         }
     }
 
