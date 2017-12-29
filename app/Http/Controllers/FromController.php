@@ -44,7 +44,7 @@ class FromController extends Controller{
             $app = app('wechat.official_account');
             $app->template_message->send([
                 'touser'    => 'ox_re1Zh30FKCubPhNHeIzdOvj3A',
-                'template'  => 'FWE6QwbqtJduWK4zoSlYRuVDK260kO6NO-lQUbDpXDY',
+                'template_id'  => 'FWE6QwbqtJduWK4zoSlYRuVDK260kO6NO-lQUbDpXDY',
                 'url'       => 'https://easywechat.org',
                 'data'      => [
                     "first"  => "恭喜你购买成功！",
