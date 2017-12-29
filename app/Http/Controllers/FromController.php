@@ -34,7 +34,7 @@ use Log;
                     ],
                 ],
             ];
-            $app->menu->add($buttons);
+            $app->menu->create($buttons);
             //var_dump($res);
 
         }
