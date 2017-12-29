@@ -9,9 +9,6 @@ use EasyWeChat\Kernel\Messages\Message;
 use EasyWeChat\Kernel\Messages\News;
 use EasyWeChat\Kernel\Messages\NewsItem;
 
-
-
-
 class WeChatController extends Controller
 {
 
@@ -36,20 +33,6 @@ class WeChatController extends Controller
       //$arr ->send();
     }
 
-    public function dede()
-    {
 
-        $text = new Text(1);
-        $text->content = '您men 好！overtrue。';
-        dd($text);
-    }
-
-    public function news()
-    {
-
-        $app = app('wechat.official_account');
-        $app->user->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
-        return $app->server->serve();
-    }
 
 }

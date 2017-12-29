@@ -19,4 +19,5 @@ Route::any('/wechat', 'WechatController@serve');
 //RRoute::any('/wechat', 'WechatController@serve');
 Route::any('dede','WechatController@dede');
 
-Route::any('news','WechatController@news');
+//微信菜单
+Route::any('news','FromController@index');
