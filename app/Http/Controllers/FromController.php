@@ -44,7 +44,7 @@ class FromController extends Controller{
             ];
 
 
-            $app->menu->create($buttons,$matchRule);
+            $app->menu->add($buttons,$matchRule);
             //var_dump($res);
 
         }
