@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use Log;
 use EasyWeChat\Kernel\Messages\Text;
 use EasyWeChat\Kernel\Messages\Video;
-
+use EasyWeChat\Kernel\Messages\Message;
 use EasyWeChat\Kernel\Messages\News;
 use EasyWeChat\Kernel\Messages\NewsItem;
 
@@ -28,7 +28,11 @@ class WeChatController extends Controller
         $app->server->push(function($message){
             return "你好";
         });
-    return  $app->server->serve();
+
+        $app->server->push(function($message){
+            return "你发送了一张图片";
+        },Message::IMAGE);
+        return  $app->server->serve();
       //$arr ->send();
     }
 
