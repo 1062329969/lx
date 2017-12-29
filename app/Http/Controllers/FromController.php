@@ -42,7 +42,7 @@ class FromController extends Controller{
 
         public function modelx(){
             $app = app('wechat.official_account');
-            $app->template_message->zend([
+            $app->template_message->send([
                 'touser'    => 'ox_re1Zh30FKCubPhNHeIzdOvj3A',
                 'template'  => 'FWE6QwbqtJduWK4zoSlYRuVDK260kO6NO-lQUbDpXDY',
                 'url'       => 'https://easywechat.org',
@@ -53,7 +53,7 @@ class FromController extends Controller{
                     "remark" => "欢迎再次购买！",
                 ]
             ]);
-            
+
         }
     }
 
