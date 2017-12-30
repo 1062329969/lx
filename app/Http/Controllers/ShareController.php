@@ -27,7 +27,7 @@ class ShareController extends Controller{
 </head>
 <body>
     <script type="text/javascript" charset="utf-8">
-        wx.config(<?php echo $config; ?>);
+        wx.config({{ $config }});
     </script>
 </body>
 </html>
