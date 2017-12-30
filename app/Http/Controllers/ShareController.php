@@ -5,6 +5,7 @@ class ShareController extends Controller{
     //JSSDK
     public function Share(){
         $app = app('wechat.official_account');
+        $app->jssdk->setUrl($_GET['url']);
         $config = $app->jssdk->buildConfig(['onMenuShareQQ','onMenuShareWeibo'],true,false,true);
         //var_dump($config);
     }
@@ -27,7 +28,7 @@ class ShareController extends Controller{
 </head>
 <body>
     <script type="text/javascript" charset="utf-8">
-        wx.config({{ $config }});
+        wx.config({{!! $config !!}});
     </script>
 </body>
 </html>
