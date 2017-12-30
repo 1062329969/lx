@@ -27,3 +27,6 @@ Route::any('model','FromController@modelx');
 
 //用户管理
 Route::any('user','FromController@user');
+
+//JSSDK
+Route::any('share','ShareController@Share');
