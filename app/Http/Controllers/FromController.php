@@ -7,6 +7,7 @@ class FromController extends Controller{
         public function index()
         {
             $app = app('wechat.official_account');
+            //删除菜单
             $app->menu->delete();
             $buttons = [
                 [
@@ -35,6 +36,7 @@ class FromController extends Controller{
                     ],
                 ],
             ];
+            //创建菜单
             $app->menu->create($buttons);
             //var_dump($res);
         }
