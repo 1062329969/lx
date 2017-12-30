@@ -61,6 +61,7 @@ class FromController extends Controller{
             //var_dump($app->user->get('ox_re1Zh30FKCubPhNHeIzdOvj3A'));
             $app->user->remark('ox_re1Zh30FKCubPhNHeIzdOvj3A', "僵尸粉");
         }
+
     }
 
 ?>
