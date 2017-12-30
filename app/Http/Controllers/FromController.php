@@ -7,7 +7,7 @@ class FromController extends Controller{
         public function index()
         {
             $app = app('wechat.official_account');
-            $app->delete();
+            $app->menu->delete();
             $buttons = [
                 [
                     "type" => "click",
