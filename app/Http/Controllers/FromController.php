@@ -7,10 +7,11 @@ class FromController extends Controller{
         public function index()
         {
             $app = app('wechat.official_account');
+            $app->delete();
             $buttons = [
                 [
                     "type" => "click",
-                    "name" => "今日美食",
+                    "name" => "今日的美食",
                     "key" => "V1001_TODAY_MUSIC"
                 ],
                 [
