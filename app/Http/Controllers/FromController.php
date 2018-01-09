@@ -57,7 +57,6 @@ class FromController extends Controller{
             ]);
         }
 
-
         //用户管理
         public function user(){
             $app = app('wechat.official_account');
